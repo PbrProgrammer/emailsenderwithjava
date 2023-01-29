@@ -1,0 +1,36 @@
+spring:
+ kafka:
+  producer:
+   value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  consumer:
+    value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+    enable-auto-commit: false
+    auto-offset-reset: earliest
+    properties:
+      spring:
+        json:
+          trusted:
+            packages: com.clarity.email
+    group-id: email_sms_group_id
+  bootstrap-servers: 192.168.19.82:29093
+
+ main:
+  allow-circular-references: true
+  allow-bean-definition-overriding: true
+
+
+  Keycloak:
+    realm: master
+    auth-server-url: http://192.168.19.82:5556/auth
+    resource: admin-cli
+    use-resource-role-mappings: true
+    bearer-only: true
+
+mail:
+  host: smtp.gmail.com
+  port: 587
+  username: fakourclarity@gmail.com
+  password: factsvvqbpgegtxi
+
+sms:
+  apikey: 51662F764772464E4E4E5555336F5A4C4E58684948714B5A694668364D7A68354837587254736A566F6C453D

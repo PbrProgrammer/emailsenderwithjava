@@ -19,7 +19,6 @@ private final JavaMailSender javaMailSender;
 
 
     public void sendSimpleMessage(EmailKafkaDTO dto) {
-        
 
         String to= dto.getEmailTo();
         String subject= dto.getEmailSubject();
